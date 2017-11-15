@@ -1,7 +1,7 @@
 import csv
 import requests
 
-URL = 'http://www.football-data.co.uk/mmz4281/1718/E0.csv'
+URL = 'http://www.football-data.co.uk/mmz4281/1617/E0.csv'
 
 with requests.Session() as s:
     download = s.get(URL)
@@ -10,9 +10,20 @@ with requests.Session() as s:
     cr = csv.reader(decoded_content.splitlines(), delimiter=',')
     my_list = list(cr)
 
-    WinCount = 0
-    DrawCount = 0
-    LossCount = 0
+    Teams = ["Arsenal", "Aston Villa", "Barnsley", "Birmingham", "Blackburn", "Blackpool", "Bolton", "Bournemouth",
+             "Bradford", "Brighton", "Burnley", "Cardiff", "Charlton", "Chelsea", "Coventry", "Crystal Palace", "Derby",
+             "Everton", "Fulham", "Huddersfield", "Hull", "Ipswich", "Leeds", "Leicester", "Liverpool", "Man City",
+             "Man United", "Middlesbrough", "Newcastle", "Norwich", "Nott'm Forest", "Oldham", "Portsmouth", "QPR", "Reading",
+             "Sheffield United", "Sheffield Weds", "Southampton", "Stoke", "Sunderland", "Swansea", "Swindon", "Tottenham",
+             "Watford", "West Brom", "West Ham", "Wigan", "Wimbledon", "Wolves"]
+
+    Win = 0
+    Loss = 0
+    Draw = 0
+    p = 0
+    BeatTeams = []
+    DrawTeams = []
+    LossTeams = []
 
     for row in my_list:
         with open('testfile.txt', 'a') as f:
@@ -21,51 +32,52 @@ with requests.Session() as s:
     with open('testfile.txt', 'r') as f:
         for line in f:
             parts = line.split(',', 3)
-            if 'Arsenal' in line:
-                print(line.split(',', 3))
 
             Home = parts[0]
             Away = parts[1]
             Result = parts[2]
 
-            if Home == 'Arsenal':
-                if Result == 'H':
-                    WinCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Won Home: ")
-                        f.write(str(WinCount))
-                        f.write('\n')
-                elif Result == 'D':
-                    DrawCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Draw Home: ")
-                        f.write('DrawCount')
-                        f.write('\n')
-                else:
-                    LossCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Lost Home: ")
-                        f.write('LossCount')
-                        f.write('\n')
+            if 'Arsenal' in Teams:
+                if Home == 'Arsenal':
+                    if Result == 'H':
+                        Win+=1
+                        BeatTeams.insert(p,Away)
+                        # print(Away)
+                    elif Result == 'D':
+                        Draw+=1
+                        DrawTeams.insert(p, Away)
+                        #print(Away)
+                    else:
+                        Loss+=1
+                        LossTeams.insert(p, Away)
+                        #print(Away)
 
-            if Away == 'Arsenal':
-                if Result == 'A':
-                    WinCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Won Away Count: ")
-                        f.write('WinCount')
-                        f.write('\n')
-                elif Result == 'D':
-                    DrawCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Draw Away Count: ")
-                        f.write('DrawCount')
-                        f.write('\n')
-                else:
-                    LossCount += 1
-                    with open('results.txt', 'a') as f:
-                        f.write("Arsenal Lost Away Count: ")
-                        f.write('LossCount')
-                        f.write('\n')
+                if Away == 'Arsenal':
+                    if Result == 'A':
+                        Win += 1
+                        BeatTeams.insert(p, Home)
+                        #print(Home)
+                    elif Result == 'D':
+                        Draw += 1
+                        DrawTeams.insert(p, Home)
+                        #print(Home)
+                    else:
+                        Loss += 1
+                        LossTeams.insert(p, Home)
+                        #print(Home)
 
-                        #Hello
+        with open('results.txt', 'a') as f:
+            with open("{}.txt".format('Arsenal'), "w") as f:
+                f.write("Team Win Count: ")
+                f.write(str(Win))
+                f.write("\nTeam Draw Count: ")
+                f.write(str(Draw))
+                f.write("\nTeam Loss Count: ")
+                f.write(str(Loss))
+                f.write('\n')
+                f.write("\nTeams They Beat: ")
+                f.write(str(BeatTeams))
+                f.write("\nTeams They Drew With: ")
+                f.write(str(DrawTeams))
+                f.write("\nTeams They Lost To: ")
+                f.write(str(LossTeams))
