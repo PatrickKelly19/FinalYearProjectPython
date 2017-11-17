@@ -1,8 +1,7 @@
 import csv
 import requests
 
-#thisvalue = ['1617', '1516', '1415', '1314', '1213', '1112', '1011', '0910', '0809', '0708', '0607', '0506', '0304', '0203', '0102', '0001', '9900', '9899', '9798', '9697', '9596', '9495', '9394']
-thisvalue = ['1617', '1516', '1415']
+thisvalue = ['1617', '1516', '1415', '1314', '1213', '1112', '1011', '0910', '0809', '0708', '0607', '0506', '0304', '0203', '0102', '0001', '9900', '9899', '9798', '9697', '9596', '9495', '9394']
 #Finding a problem with '0405' year, doesnt seem to be an issue but will ignore that year for the time being
 
 for i in thisvalue:
@@ -39,7 +38,7 @@ for i in thisvalue:
         seasonResults = open(i+'.txt', 'r')
 
         for teamName in Teams:
-            teamFiles = open("{}.txt".format(teamName), "w")
+            teamFiles = open("{}.txt".format(teamName), "a")
             seasonResults = open(i+'.txt', 'r')
 
             for line in seasonResults:
@@ -66,7 +65,7 @@ for i in thisvalue:
                         drewWith.append(home)
                         draw += 1
 
-            teamFiles.write("Premier League Statistics "+i+"\n\n")
+            teamFiles.write("\nPremier League Statistics "+i+"\n\n")
             teamFiles.write("Win count = " + str(win) + "\n")
             teamFiles.write("Loss count = " + str(loss) + "\n")
             teamFiles.write("Draw Count = " + str(draw) + "\n")
