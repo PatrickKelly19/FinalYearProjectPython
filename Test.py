@@ -572,10 +572,9 @@ print('Arsenal Losses Against Bournemouth: ' + str(bournemouthLossCount))
 print('Arsenal Draws Against Bournemouth: ' + str(bournemouthDrawCount))
 print('Arsenal Total Number of Games Against Bournemouth: ',bournemouthWinCount + bournemouthLossCount + bournemouthDrawCount)
 bournemouthTotal = bournemouthWinCount + bournemouthLossCount + bournemouthDrawCount
-print('Arsenal Win Percentage Against Bournemouth: ',bournemouthWinCount/bournemouthTotal*100, '%')
-print('Arsenal Loss Percentage Against Bournemouth: ',bournemouthLossCount/bournemouthTotal*100, '%')
-print('Arsenal Draw Percentage Against Bournemouth: ',bournemouthDrawCount/bournemouthTotal*100, '%')
-print(format(bournemouthDrawCount/bournemouthTotal*100, '.2f'))
+print('Arsenal Win Percentage Against Bournemouth: ',format(bournemouthWinCount/bournemouthTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Bournemouth: ',format(bournemouthLossCount/bournemouthTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Bournemouth: ',format(bournemouthDrawCount/bournemouthTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 2
@@ -584,9 +583,9 @@ print('Arsenal Losses Against Brighton: ' + str(brightonLossCount))
 print('Arsenal Draws Against Brighton: ' + str(brightonDrawCount))
 print('Arsenal Total Number of Games Against Brighton: ',brightonWinCount + brightonLossCount + brightonDrawCount)
 brightonTotal = brightonWinCount + brightonLossCount + brightonDrawCount
-print('Arsenal Win Percentage Against Brighton: ',brightonWinCount/brightonTotal*100, '%')
-print('Arsenal Loss Percentage Against Brighton: ',brightonLossCount/brightonTotal*100, '%')
-print('Arsenal Draw Percentage Against Brighton: ',brightonDrawCount/brightonTotal*100, '%')
+print('Arsenal Win Percentage Against Brighton: ',format(brightonWinCount/brightonTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Brighton: ',format(brightonLossCount/brightonTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Brighton: ',format(brightonDrawCount/brightonTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 3
@@ -595,9 +594,9 @@ print('Arsenal Losses Against Burnley: ' + str(burnleyLossCount))
 print('Arsenal Draws Against Burnley: ' + str(burnleyDrawCount))
 print('Arsenal Total Number of Games Against Burnley: ',burnleyWinCount + burnleyLossCount + burnleyDrawCount)
 burnleyTotal = burnleyWinCount + burnleyLossCount + burnleyDrawCount
-print('Arsenal Win Percentage Against Burnley: ',burnleyWinCount/burnleyTotal*100, '%')
-print('Arsenal Loss Percentage Against Burnley: ',burnleyLossCount/burnleyTotal*100, '%')
-print('Arsenal Draw Percentage Against Burnley: ',burnleyDrawCount/burnleyTotal*100, '%')
+print('Arsenal Win Percentage Against Burnley: ',format(burnleyWinCount/burnleyTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Burnley: ',format(burnleyLossCount/burnleyTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Burnley: ',format(burnleyDrawCount/burnleyTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 4
@@ -606,9 +605,9 @@ print('Arsenal Losses Against Chelsea: ' + str(chelseaLossCount))
 print('Arsenal Draws Against Chelsea: ' + str(chelseaDrawCount))
 print('Arsenal Total Number of Games Against Chelsea: ',chelseaWinCount + chelseaLossCount + chelseaDrawCount)
 chelseaTotal = chelseaWinCount + chelseaLossCount + chelseaDrawCount
-print('Arsenal Win Percentage Against Chelsea: ',chelseaWinCount/chelseaTotal*100, '%')
-print('Arsenal Loss Percentage Against Chelsea: ',chelseaLossCount/chelseaTotal*100, '%')
-print('Arsenal Draw Percentage Against Chelsea: ',chelseaDrawCount/chelseaTotal*100, '%')
+print('Arsenal Win Percentage Against Chelsea: ',format(chelseaWinCount/chelseaTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Chelsea: ',format(chelseaLossCount/chelseaTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Chelsea: ',format(chelseaDrawCount/chelseaTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 5
@@ -617,9 +616,9 @@ print('Arsenal Losses Against Crystal Palace: ' + str(crystalpalaceLossCount))
 print('Arsenal Draws Against Crystal Palace: ' + str(crystalpalaceDrawCount))
 print('Arsenal Total Number of Games Against Crystal Palace: ',crystalpalaceWinCount + crystalpalaceLossCount + crystalpalaceDrawCount)
 crystalpalaceTotal = crystalpalaceWinCount + crystalpalaceLossCount + crystalpalaceDrawCount
-print('Arsenal Win Percentage Against Crystal Palace: ',crystalpalaceWinCount/crystalpalaceTotal*100, '%')
-print('Arsenal Loss Percentage Against Crystal Palace: ',crystalpalaceLossCount/crystalpalaceTotal*100, '%')
-print('Arsenal Draw Percentage Against Crystal Palace: ',crystalpalaceDrawCount/crystalpalaceTotal*100, '%')
+print('Arsenal Win Percentage Against Crystal Palace: ',format(crystalpalaceWinCount/crystalpalaceTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Crystal Palace: ',format(crystalpalaceLossCount/crystalpalaceTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Crystal Palace: ',format(crystalpalaceDrawCount/crystalpalaceTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 6
@@ -628,9 +627,9 @@ print('Arsenal Losses Against Everton: ' + str(evertonLossCount))
 print('Arsenal Draws Against Everton: ' + str(evertonDrawCount))
 print('Arsenal Total Number of Games Against Everton: ',evertonWinCount + evertonLossCount + evertonDrawCount)
 evertonTotal = evertonWinCount + evertonLossCount + evertonDrawCount
-print('Arsenal Win Percentage Against Everton: ',evertonWinCount/evertonTotal*100, '%')
-print('Arsenal Loss Percentage Against Everton: ',evertonLossCount/evertonTotal*100, '%')
-print('Arsenal Draw Percentage Against Everton: ',evertonDrawCount/evertonTotal*100, '%')
+print('Arsenal Win Percentage Against Everton: ',format(evertonWinCount/evertonTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Everton: ',format(evertonLossCount/evertonTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Everton: ',format(evertonDrawCount/evertonTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 7
@@ -639,9 +638,9 @@ print('Arsenal Losses Against Leicester: ' + str(leicesterLossCount))
 print('Arsenal Draws Against Leicester: ' + str(leicesterDrawCount))
 print('Arsenal Total Number of Games Against Leicester: ',leicesterWinCount + leicesterLossCount + leicesterDrawCount)
 leicesterTotal = leicesterWinCount + leicesterLossCount + leicesterDrawCount
-print('Arsenal Win Percentage Against Leicester: ',leicesterWinCount/leicesterTotal*100, '%')
-print('Arsenal Loss Percentage Against Leicester: ',leicesterLossCount/leicesterTotal*100, '%')
-print('Arsenal Draw Percentage Against Leicester: ',leicesterDrawCount/leicesterTotal*100, '%')
+print('Arsenal Win Percentage Against Leicester: ',format(leicesterWinCount/leicesterTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Leicester: ',format(leicesterLossCount/leicesterTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Leicester: ',format(leicesterDrawCount/leicesterTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 8 #Need to error check if they divide by zero
@@ -650,9 +649,9 @@ print('\n')
 # print('Arsenal Draws Against Huddersfield: ' + str(huddersfieldDrawCount))
 # print('Arsenal Total Number of Games Against Huddersfield: ',huddersfieldWinCount + huddersfieldLossCount + huddersfieldDrawCount)
 # huddersfieldTotal = huddersfieldWinCount + huddersfieldLossCount + huddersfieldDrawCount
-# print('Arsenal Win Percentage Against Huddersfield: ',huddersfieldWinCount/huddersfieldTotal*100, '%')
-# print('Arsenal Loss Percentage Against Huddersfield: ',huddersfieldLossCount/huddersfieldTotal*100, '%')
-# print('Arsenal Draw Percentage Against Huddersfield: ',huddersfieldDrawCount/huddersfieldTotal*100, '%')
+# print('Arsenal Win Percentage Against Huddersfield: ',format(huddersfieldWinCount/huddersfieldTotal*100, '.2f'),'%')
+# print('Arsenal Loss Percentage Against Huddersfield: ',format(huddersfieldLossCount/huddersfieldTotal*100, '.2f'),'%')
+# print('Arsenal Draw Percentage Against Huddersfield: ',format(huddersfieldDrawCount/huddersfieldTotal*100, '.2f'),'%')
 # print('\n')
 
 #Team 9
@@ -661,9 +660,9 @@ print('Arsenal Losses Against Liverpool: ' + str(liverpoolLossCount))
 print('Arsenal Draws Against Liverpool: ' + str(liverpoolDrawCount))
 print('Arsenal Total Number of Games Against Liverpool: ',liverpoolWinCount + liverpoolLossCount + liverpoolDrawCount)
 liverpoolTotal = liverpoolWinCount + liverpoolLossCount + liverpoolDrawCount
-print('Arsenal Win Percentage Against Liverpool: ',liverpoolWinCount/liverpoolTotal*100, '%')
-print('Arsenal Loss Percentage Against Liverpool: ',liverpoolLossCount/liverpoolTotal*100, '%')
-print('Arsenal Draw Percentage Against Liverpool: ',liverpoolDrawCount/liverpoolTotal*100, '%')
+print('Arsenal Win Percentage Against Liverpool: ',format(liverpoolWinCount/liverpoolTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Liverpool: ',format(liverpoolLossCount/liverpoolTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Liverpool: ',format(liverpoolDrawCount/liverpoolTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 10
@@ -672,9 +671,9 @@ print('Arsenal Losses Against Man City: ' + str(mancityLossCount))
 print('Arsenal Draws Against Man City: ' + str(mancityDrawCount))
 print('Arsenal Total Number of Games Against Man City: ',mancityWinCount + mancityLossCount + mancityDrawCount)
 mancityTotal = mancityWinCount + mancityLossCount + mancityDrawCount
-print('Arsenal Win Percentage Against Man City: ',mancityWinCount/mancityTotal*100, '%')
-print('Arsenal Loss Percentage Against Man City: ',mancityLossCount/mancityTotal*100, '%')
-print('Arsenal Draw Percentage Against Man City: ',mancityDrawCount/mancityTotal*100, '%')
+print('Arsenal Win Percentage Against Man City: ',format(mancityWinCount/mancityTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Man City: ',format(mancityLossCount/mancityTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Man City: ',format(mancityDrawCount/mancityTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 11
@@ -683,9 +682,9 @@ print('Arsenal Losses Against Man United: ' + str(manunitedLossCount))
 print('Arsenal Draws Against Man United: ' + str(manunitedDrawCount))
 print('Arsenal Total Number of Games Against Man United: ',manunitedWinCount + manunitedLossCount + manunitedDrawCount)
 manunitedTotal = manunitedWinCount + manunitedLossCount + manunitedDrawCount
-print('Arsenal Win Percentage Against Man United: ',manunitedWinCount/manunitedTotal*100, '%')
-print('Arsenal Loss Percentage Against Man United: ',manunitedLossCount/manunitedTotal*100, '%')
-print('Arsenal Draw Percentage Against Man United: ',manunitedDrawCount/manunitedTotal*100, '%')
+print('Arsenal Win Percentage Against Man United: ',format(manunitedWinCount/manunitedTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Man United: ',format(manunitedLossCount/manunitedTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Man United: ',format(manunitedDrawCount/manunitedTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 12
@@ -694,9 +693,9 @@ print('Arsenal Losses Against Newcastle: ' + str(newcastleLossCount))
 print('Arsenal Draws Against Newcastle: ' + str(newcastleDrawCount))
 print('Arsenal Total Number of Games Against Newcastle: ',newcastleWinCount + newcastleLossCount + newcastleDrawCount)
 newcastleTotal = newcastleWinCount + newcastleLossCount + newcastleDrawCount
-print('Arsenal Win Percentage Against Newcastle: ',newcastleWinCount/newcastleTotal*100, '%')
-print('Arsenal Loss Percentage Against Newcastle: ',newcastleLossCount/newcastleTotal*100, '%')
-print('Arsenal Draw Percentage Against Newcastle: ',newcastleDrawCount/newcastleTotal*100, '%')
+print('Arsenal Win Percentage Against Newcastle: ',format(newcastleWinCount/newcastleTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Newcastle: ',format(newcastleLossCount/newcastleTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Newcastle: ',format(newcastleDrawCount/newcastleTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 13
@@ -706,9 +705,9 @@ print('Losses Against Southampton: ' + str(southamptonLossCount))
 print('Draws Against Southampton: ' + str(southamptonDrawCount))
 print('Total Number of Games Against Southampton: ',southamptonWinCount + southamptonLossCount + southamptonDrawCount)
 southamptonTotal = southamptonWinCount + southamptonLossCount + southamptonDrawCount
-print('Win Percentage Against Southampton',southamptonWinCount/southamptonTotal*100, '%')
-print('Loss Percentage Against Southampton',southamptonLossCount/southamptonTotal*100, '%')
-print('Draw Percentage Against Southampton',southamptonDrawCount/southamptonTotal*100, '%')
+print('Win Percentage Against Southampton',format(southamptonWinCount/southamptonTotal*100, '.2f'),'%')
+print('Loss Percentage Against Southampton',format(southamptonLossCount/southamptonTotal*100, '.2f'),'%')
+print('Draw Percentage Against Southampton',format(southamptonDrawCount/southamptonTotal*100, '.2f'),'%')
 
 #Team 14
 print('Arsenal Wins Against Stoke: ' + str(stokeWinCount))
@@ -716,9 +715,9 @@ print('Arsenal Losses Against Stoke: ' + str(stokeLossCount))
 print('Arsenal Draws Against Stoke: ' + str(stokeDrawCount))
 print('Arsenal Total Number of Games Against Stoke: ',stokeWinCount + stokeLossCount + stokeDrawCount)
 stokeTotal = stokeWinCount + stokeLossCount + stokeDrawCount
-print('Arsenal Win Percentage Against Stoke: ',stokeWinCount/stokeTotal*100, '%')
-print('Arsenal Loss Percentage Against Stoke: ',stokeLossCount/stokeTotal*100, '%')
-print('Arsenal Draw Percentage Against Stoke: ',stokeDrawCount/stokeTotal*100, '%')
+print('Arsenal Win Percentage Against Stoke: ',format(stokeWinCount/stokeTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Stoke: ',format(stokeLossCount/stokeTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Stoke: ',format(stokeDrawCount/stokeTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 15
@@ -727,9 +726,9 @@ print('\n')
 # print('Arsenal Draws Against Sunderland: ' + str(sunderlandDrawCount))
 # print('Arsenal Total Number of Games Against Sunderland: ',sunderlandWinCount + sunderlandLossCount + sunderlandDrawCount)
 # sunderlandTotal = sunderlandWinCount + sunderlandLossCount + sunderlandDrawCount
-# print('Arsenal Win Percentage Against Sunderland: ',sunderlandWinCount/sunderlandTotal*100, '%')
-# print('Arsenal Loss Percentage Against Sunderland: ',sunderlandLossCount/sunderlandTotal*100, '%')
-# print('Arsenal Draw Percentage Against Sunderland: ',sunderlandDrawCount/sunderlandTotal*100, '%')
+# print('Arsenal Win Percentage Against Sunderland: ',format(sunderlandWinCount/sunderlandTotal*100, '.2f'),'%')
+# print('Arsenal Loss Percentage Against Sunderland: ',format(sunderlandLossCount/sunderlandTotal*100, '.2f'),'%')
+# print('Arsenal Draw Percentage Against Sunderland: ',format(sunderlandDrawCount/sunderlandTotal*100, '.2f'),'%')
 # print('\n')
 
 #Team 16
@@ -738,9 +737,9 @@ print('Arsenal Losses Against Swansea: ' + str(swanseaLossCount))
 print('Arsenal Draws Against Swansea: ' + str(swanseaDrawCount))
 print('Arsenal Total Number of Games Against Swansea: ',swanseaWinCount + swanseaLossCount + swanseaDrawCount)
 swanseaTotal = swanseaWinCount + swanseaLossCount + swanseaDrawCount
-print('Arsenal Win Percentage Against Swansea: ',swanseaWinCount/swanseaTotal*100, '%')
-print('Arsenal Loss Percentage Against Swansea: ',swanseaLossCount/swanseaTotal*100, '%')
-print('Arsenal Draw Percentage Against Swansea: ',swanseaDrawCount/swanseaTotal*100, '%')
+print('Arsenal Win Percentage Against Swansea: ',format(swanseaWinCount/swanseaTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Swansea: ',format(swanseaLossCount/swanseaTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Swansea: ',format(swanseaDrawCount/swanseaTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 17
@@ -749,9 +748,9 @@ print('Arsenal Losses Against Tottenham: ' + str(tottenhamLossCount))
 print('Arsenal Draws Against Tottenham: ' + str(tottenhamDrawCount))
 print('Arsenal Total Number of Games Against Tottenham: ',tottenhamWinCount + tottenhamLossCount + tottenhamDrawCount)
 tottenhamTotal = tottenhamWinCount + tottenhamLossCount + tottenhamDrawCount
-print('Arsenal Win Percentage Against Tottenham: ',tottenhamWinCount/tottenhamTotal*100, '%')
-print('Arsenal Loss Percentage Against Tottenham: ',tottenhamLossCount/tottenhamTotal*100, '%')
-print('Arsenal Draw Percentage Against Tottenham: ',tottenhamDrawCount/tottenhamTotal*100, '%')
+print('Arsenal Win Percentage Against Tottenham: ',format(tottenhamWinCount/tottenhamTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Tottenham: ',format(tottenhamLossCount/tottenhamTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Tottenham: ',format(tottenhamDrawCount/tottenhamTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 18
@@ -760,10 +759,9 @@ print('Arsenal Losses Against Watford: ' + str(watfordLossCount))
 print('Arsenal Draws Against Watford: ' + str(watfordDrawCount))
 print('Arsenal Total Number of Games Against Watford: ',watfordWinCount + watfordLossCount + watfordDrawCount)
 watfordTotal = watfordWinCount + watfordLossCount + watfordDrawCount
-print('Arsenal Win Percentage Against Watford: ',watfordWinCount/watfordTotal*100, '%')
-print('Arsenal Loss Percentage Against Watford: ',watfordLossCount/watfordTotal*100, '%')
-print('Arsenal Draw Percentage Against Watford: ',watfordDrawCount/watfordTotal*100, '%')
-print(format(watfordWinCount/watfordTotal*100, '.2f'))
+print('Arsenal Win Percentage Against Watford: ',format(watfordWinCount/watfordTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against Watford: ',format(watfordLossCount/watfordTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against Watford: ',format(watfordDrawCount/watfordTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 19
@@ -772,9 +770,9 @@ print('Arsenal Losses Against West Brom: ' + str(westbromLossCount))
 print('Arsenal Draws Against West Brom: ' + str(westbromDrawCount))
 print('Arsenal Total Number of Games Against West Brom: ',westbromWinCount + westbromLossCount + westbromDrawCount)
 westbromTotal = westbromWinCount + westbromLossCount + westbromDrawCount
-print('Arsenal Win Percentage Against West Brom: ',westbromWinCount/westbromTotal*100, '%')
-print('Arsenal Loss Percentage Against West Brom: ',westbromLossCount/westbromTotal*100, '%')
-print('Arsenal Draw Percentage Against West Brom: ',westbromDrawCount/westbromTotal*100, '%')
+print('Arsenal Win Percentage Against West Brom: ',format(westbromWinCount/westbromTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against West Brom: ',format(westbromLossCount/westbromTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against West Brom: ',format(westbromDrawCount/westbromTotal*100, '.2f'),'%')
 print('\n')
 
 #Team 20
@@ -783,7 +781,7 @@ print('Arsenal Losses Against West Ham: ' + str(westhamLossCount))
 print('Arsenal Draws Against West Ham: ' + str(westhamDrawCount))
 print('Arsenal Total Number of Games Against West Ham: ',westhamWinCount + westhamLossCount + westhamDrawCount)
 westhamTotal = westhamWinCount + westhamLossCount + westhamDrawCount
-print('Arsenal Win Percentage Against West Ham ',westhamWinCount/westhamTotal*100, '%')
-print('Arsenal Loss Percentage Against West Ham: ',westhamLossCount/westhamTotal*100, '%')
-print('Arsenal Draw Percentage Against West Ham: ',westhamDrawCount/westhamTotal*100, '%')
+print('Arsenal Win Percentage Against West Ham ',format(westhamWinCount/westhamTotal*100, '.2f'),'%')
+print('Arsenal Loss Percentage Against West Ham: ',format(westhamLossCount/westhamTotal*100, '.2f'),'%')
+print('Arsenal Draw Percentage Against West Ham: ',format(westhamDrawCount/westhamTotal*100, '.2f'),'%')
 print('\n')
