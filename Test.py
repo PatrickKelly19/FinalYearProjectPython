@@ -1,12 +1,15 @@
-Teams = ['Chelsea','Southampton']
+Teams = ['Arsenal', 'Bournemouth', 'Brighton', 'Burnley', 'Chelsea', 'Crystal Palace', 'Everton', 'Huddersfield', 'Leicester',
+         'Liverpool', 'Man City', 'Man United', 'Newcastle', 'Southampton', 'Stoke', 'Swansea',
+         'Tottenham', 'Watford', 'West Brom', 'West Ham']
 
-win=0
-loss=0
-draw=0
+win = 0
+loss = 0
+draw = 0
 
 for teamName in Teams:
     file = open("Arsenal.txt", "r", encoding="utf-8-sig")
     for line in file:
+
         if line.startswith('Beaten Teams ='):
             if line.count(teamName) == 2:
                 win += 2
@@ -31,27 +34,54 @@ for teamName in Teams:
             else:
                 draw += 0
 
-    if teamName == 'Chelsea':
-        print("Should be Chelsea",teamName)
+    yearFiles = open('ResultsArsenal.txt', 'a')
+    yearFiles.write('\n')
+    yearFiles.write('Wins Against '+teamName+': ' + str(win)+'\n')
+    yearFiles.write('Losses Against '+teamName+': ' + str(loss)+'\n')
+    yearFiles.write('Draws Against '+teamName+': ' + str(draw)+'\n')
 
-        print('Wins Against Chelsea: ' + str(win))
-        print('Losses Against Chelsea: ' + str(loss))
-        print('Draws Against Chelsea: ' + str(draw))
+    total = win + loss + draw
+    yearFiles.write("Total Number of Games Against Bournemouth: " + str(total)+'\n')
 
-        win = 0
-        loss = 0
-        draw = 0
+    if total == 0:
+        winPer = 0
+        lossPer = 0
+        drawPer = 0
+        yearFiles.write('Win Percentage Against '+teamName+': ' + str(winPer)+'%'+'\n')
+        yearFiles.write('Loss Percentage Against '+teamName+': ' + str(lossPer)+'%'+'\n')
+        yearFiles.write('Draw Percentage Against '+teamName+': ' + str(drawPer)+'%'+'\n')
 
-    if teamName == 'Southampton':
-        print('\n')
-        print("Should be Southampton",teamName)
+    elif win == 0:
+        winPer = format(0,'.2f')
+        lossPer = format(loss / total * 100, '.2f')
+        drawPer = format(draw / total * 100, '.2f')
+        yearFiles.write('Win Percentage Against  '+teamName+': ' + winPer+'%'+'\n')
+        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
+        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
 
-        print('Arsenal Wins Against Southampton: ' + str(win))
-        print('Arsenal Losses Against Southampton: ' + str(loss))
-        print('Arsenal Draws Against Southampton: ' + str(draw))
+    elif loss == 0:
+        lossPer = format(0,'.2f')
+        winPer = format(win / total * 100, '.2f')
+        drawPer = format(draw / total * 100, '.2f')
+        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
+        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
+        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
 
-        win = 0
-        loss = 0
-        draw = 0
+    elif draw == 0:
+        drawPer = format(0,'.2f')
+        winPer = format(win / total * 100, '.2f')
+        lossPer = format(loss / total * 100, '.2f')
+        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
+        yearFiles.write('Draw Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
+        yearFiles.write('Loss Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
 
-
+    else:
+        winPer = format(win / total * 100, '.2f')
+        lossPer = format(loss / total * 100, '.2f')
+        drawPer = format(draw / total * 100, '.2f')
+        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
+        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
+        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
+    win = 0
+    loss = 0
+    draw = 0
