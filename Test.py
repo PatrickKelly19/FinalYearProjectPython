@@ -1,87 +1,102 @@
-Teams = ['Arsenal', 'Bournemouth', 'Brighton', 'Burnley', 'Chelsea', 'Crystal Palace', 'Everton', 'Huddersfield', 'Leicester',
-         'Liverpool', 'Man City', 'Man United', 'Newcastle', 'Southampton', 'Stoke', 'Swansea',
-         'Tottenham', 'Watford', 'West Brom', 'West Ham']
+import csv
+import requests
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
 
-win = 0
-loss = 0
-draw = 0
+req = Request("http://www.football-data.co.uk/englandm.php")
 
-for teamName in Teams:
-    file = open("Arsenal.txt", "r", encoding="utf-8-sig")
-    for line in file:
+try:
+    response = urlopen(req)
+    print('HTTP Status Code: ' + str(response.code))
+except HTTPError as e:
+    print('The server could not fulfill the request: ')
+    print('Error HTTP status code: ', e.code)
+except URLError as e:
+    print('Failed to reach server: ')
+    print('Reason: ', e.reason)
+else:
+    print ('Website is up and running fine')
 
-        if line.startswith('Beaten Teams ='):
-            if line.count(teamName) == 2:
-                win += 2
-            elif line.count(teamName) == 1:
-                win += 1
-            else:
-                win += 0
+    thisvalue = ['1617', '1516', '1415', '1314', '1213', '1112', '1011', '0910', '0809', '0708', '0607', '0506', '0304',
+                 '0203', '0102', '0001', '9900', '9899', '9798', '9697', '9596', '9495', '9394']
+    # Finding a problem with '0405' year, doesnt seem to be an issue but will ignore that year for the time being
 
-        if line.startswith('Lost to Teams ='):
-            if line.count(teamName) == 2:
-                loss += 2
-            elif line.count(teamName) == 1:
-                loss += 1
-            else:
-                loss += 0
+    for i in thisvalue:
+        yearFiles = open("{}.txt".format(i), "w")
+        URL = 'http://www.football-data.co.uk/mmz4281/' + i + '/E0.csv'
 
-        if line.startswith('Drew with Teams ='):
-            if line.count(teamName) == 2:
-                draw += 2
-            elif line.count(teamName) == 1:
-                draw += 1
-            else:
-                draw += 0
+        with requests.Session() as s:
+            download = s.get(URL)
+            decoded_content = download.content.decode('utf-8')
 
-    yearFiles = open('ResultsArsenal.txt', 'a')
-    yearFiles.write('\n')
-    yearFiles.write('Wins Against '+teamName+': ' + str(win)+'\n')
-    yearFiles.write('Losses Against '+teamName+': ' + str(loss)+'\n')
-    yearFiles.write('Draws Against '+teamName+': ' + str(draw)+'\n')
+            cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+            my_list = list(cr)
 
-    total = win + loss + draw
-    yearFiles.write("Total Number of Games Against Bournemouth: " + str(total)+'\n')
+            for row in my_list:
+                with open(i + '.txt', 'a') as f:
+                    f.write(''.join(row[2] + ',' + row[3] + ',' + row[6] + ',') + '\n')
 
-    if total == 0:
-        winPer = 0
-        lossPer = 0
-        drawPer = 0
-        yearFiles.write('Win Percentage Against '+teamName+': ' + str(winPer)+'%'+'\n')
-        yearFiles.write('Loss Percentage Against '+teamName+': ' + str(lossPer)+'%'+'\n')
-        yearFiles.write('Draw Percentage Against '+teamName+': ' + str(drawPer)+'%'+'\n')
+        with open(i + '.txt', 'r') as f:
+            Teams = ['Arsenal', 'Aston Villa', 'Barnsley', 'Birmingham', 'Blackburn', 'Blackpool', 'Bolton',
+                     'Bournemouth', 'Bradford', 'Brighton', 'Burnley', 'Cardiff', 'Charlton', 'Chelsea', 'Coventry',
+                     'Crystal Palace', 'Derby', 'Everton', 'Fulham', 'Huddersfield', 'Hull', 'Ipswich', 'Leeds',
+                     'Leicester',
+                     'Liverpool', 'Man City', 'Man United', 'Middlesbrough', 'Newcastle', 'Norwich', 'Oldham',
+                     'Portsmouth',
+                     'QPR', 'Reading', 'Sheffield United', 'Sheffield Weds', 'Southampton', 'Stoke', 'Sunderland',
+                     'Swansea',
+                     'Swindon', 'Tottenham', 'Watford', 'West Brom', 'West Ham', 'Wigan', 'Wimbledon', 'Wolves']
 
-    elif win == 0:
-        winPer = format(0,'.2f')
-        lossPer = format(loss / total * 100, '.2f')
-        drawPer = format(draw / total * 100, '.2f')
-        yearFiles.write('Win Percentage Against  '+teamName+': ' + winPer+'%'+'\n')
-        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
-        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
+            beatenTeam = []
+            lostToTeams = []
+            drewWith = []
+            win = 0
+            loss = 0
+            draw = 0
 
-    elif loss == 0:
-        lossPer = format(0,'.2f')
-        winPer = format(win / total * 100, '.2f')
-        drawPer = format(draw / total * 100, '.2f')
-        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
-        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
-        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
+            # seasonResults = open(i + '.txt', 'r')
 
-    elif draw == 0:
-        drawPer = format(0,'.2f')
-        winPer = format(win / total * 100, '.2f')
-        lossPer = format(loss / total * 100, '.2f')
-        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
-        yearFiles.write('Draw Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
-        yearFiles.write('Loss Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
+            for teamName in Teams:
+                seasonResults = open(i + '.txt', 'r')
 
-    else:
-        winPer = format(win / total * 100, '.2f')
-        lossPer = format(loss / total * 100, '.2f')
-        drawPer = format(draw / total * 100, '.2f')
-        yearFiles.write('Win Percentage Against '+teamName+': ' + winPer+'%'+'\n')
-        yearFiles.write('Loss Percentage Against '+teamName+': ' + lossPer+'%'+'\n')
-        yearFiles.write('Draw Percentage Against '+teamName+': ' + drawPer+'%'+'\n')
-    win = 0
-    loss = 0
-    draw = 0
+                for line in seasonResults:
+                    teamFiles = open("{}.txt".format(teamName), "a")
+
+                    home, away, result, newline = line.split(',')
+                    if home == teamName:
+                        if result == 'H':
+                            beatenTeam.append(away)
+                            win += 1
+                        elif result == 'A':
+                            lostToTeams.append(away)
+                            loss += 1
+                        elif result == 'D':
+                            drewWith.append(away)
+                            draw += 1
+                    elif away == teamName:
+                        if result == 'A':
+                            beatenTeam.append(home)
+                            win += 1
+                        elif result == 'H':
+                            lostToTeams.append(home)
+                            loss += 1
+                        elif result == 'D':
+                            drewWith.append(home)
+                            draw += 1
+
+                teamFiles.write("\nPremier League Statistics " + i + "\n\n")
+                teamFiles.write("Win count = " + str(win) + "\n")
+                teamFiles.write("Loss count = " + str(loss) + "\n")
+                teamFiles.write("Draw Count = " + str(draw) + "\n")
+                teamFiles.write("Beaten Teams = " + str(beatenTeam) + "\n")
+                teamFiles.write("Lost to Teams = " + str(lostToTeams) + "\n")
+                teamFiles.write("Drew with Teams = " + str(drewWith) + "\n")
+                print(i)
+
+                win = 0
+                loss = 0
+                draw = 0
+                beatenTeam = []
+                lostToTeams = []
+                drewWith = []
+                teamFiles.close()
